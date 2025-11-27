@@ -3,6 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import TextSection from '../components/TextSection.astro';
 import CTASection from '../components/CTASection.astro';
+
+import prisonPipeline from '../assets/img/issues/prison-pipeline.jpg';
+import systemsOfCare from '../assets/img/issues/systems-of-care.jpg';
+import guaranteesNotChoices from '../assets/img/issues/guarantees-not-choices.jpg';
+import communityTeachers from '../assets/img/issues/community-teachers.jpg';
+import safetySupport from '../assets/img/issues/safety-support.jpg';
+import personalizeLearning from '../assets/img/issues/personalize-learning.jpg';
 ---
 
 <Layout title="Issues">
@@ -17,7 +24,7 @@ import CTASection from '../components/CTASection.astro';
 		backgroundColor="white"
 		maxWidth="medium"
 		content=""
-		imageSrc="/images/issues/prison-pipeline.jpg"
+		imageSrc={prisonPipeline}
 		imageAlt="Alameda Juvenile Hall"
 		imagePosition="top"
 	>
@@ -31,7 +38,7 @@ import CTASection from '../components/CTASection.astro';
 		backgroundColor="gray"
 		maxWidth="medium"
 		content=""
-		imageSrc="/images/issues/systems-of-care.jpg"
+		imageSrc={systemsOfCare}
 		imageAlt="School Health Centers"
 		imagePosition="top"
 	>
@@ -45,7 +52,7 @@ import CTASection from '../components/CTASection.astro';
 		backgroundColor="white"
 		maxWidth="medium"
 		content=""
-		imageSrc="/images/issues/guarantees-not-choices.jpg"
+		imageSrc={guaranteesNotChoices}
 		imageAlt="Castlemont High School"
 		imagePosition="top"
 	>
@@ -59,7 +66,7 @@ import CTASection from '../components/CTASection.astro';
 		backgroundColor="gray"
 		maxWidth="medium"
 		content=""
-		imageSrc="/images/issues/community-teachers.jpg"
+		imageSrc={communityTeachers}
 		imageAlt="Male teachers of color"
 		imagePosition="top"
 	>
@@ -73,7 +80,7 @@ import CTASection from '../components/CTASection.astro';
 		backgroundColor="white"
 		maxWidth="medium"
 		content=""
-		imageSrc="/images/issues/safety-support.jpg"
+		imageSrc={safetySupport}
 		imageAlt="Students with masks"
 		imagePosition="top"
 	>
@@ -87,7 +94,7 @@ import CTASection from '../components/CTASection.astro';
 		backgroundColor="gray"
 		maxWidth="medium"
 		content=""
-		imageSrc="/images/issues/personalize-learning.jpg"
+		imageSrc={personalizeLearning}
 		imageAlt="Teacher and student working together"
 		imagePosition="top"
 	>
