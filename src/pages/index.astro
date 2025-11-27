@@ -1,16 +1,11 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+	<section class="text-center py-20">
+		<h1 class="text-5xl font-bold text-blue-900 mb-6">Alysse Castro</h1>
+		<p class="text-xl text-gray-700 mb-8">Alameda County Superintendent of Schools</p>
+		<a href="/volunteer" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">Get Involved</a>
+	</section>
+</Layout>
