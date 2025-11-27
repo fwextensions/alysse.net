@@ -1,0 +1,36 @@
+---
+import EndorsementCard from './EndorsementCard.astro';
+
+interface Endorsement {
+	name: string;
+	title: string;
+}
+
+interface Props {
+	category: string;
+	endorsements: Endorsement[];
+}
+
+const { category, endorsements } = Astro.props;
+
+// Filter out any malformed entries
+const validEndorsements = endorsements.filter(
+	e => e.name && e.name.trim() && !e.name.includes('Endorsements:')
+);
+---
+
+{validEndorsements.length > 0 && (
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold text-blue-900 mb-6 border-b-4 border-blue-600 inline-block pb-2">
+			{category}
+		</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+			{validEndorsements.map((endorsement) => (
+				<EndorsementCard 
+					name={endorsement.name} 
+					title={endorsement.title}
+				/>
+			))}
+		</div>
+	</section>
+)}

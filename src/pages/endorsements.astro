@@ -1,11 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import EndorsementList from '../components/EndorsementList.astro';
 import endorsementsData from '../content/endorsements/endorsements.json';
+
+// Define category display names
+const categories = [
+	{ key: 'city_and_state_leaders', label: 'City and State Leaders' },
+	{ key: 'education_leaders', label: 'Education Leaders' },
+	{ key: 'alameda_county_leaders', label: 'Alameda County Leaders' },
+	{ key: 'elected_officials', label: 'Elected Officials' },
+	{ key: 'organizations', label: 'Organizations' },
+	{ key: 'labor', label: 'Labor' },
+];
 ---
 
 <Layout title="Endorsements">
-	<h1 class="text-4xl font-bold text-blue-900 mb-6">Endorsements</h1>
-	<pre class="bg-gray-100 p-4 rounded overflow-auto text-sm">
-		{JSON.stringify(endorsementsData, null, 2)}
-	</pre>
+	<div class="max-w-7xl mx-auto">
+		<h1 class="text-5xl font-bold text-blue-900 mb-4">Endorsements</h1>
+		<p class="text-xl text-gray-700 mb-12">
+			Alysse is proud to be supported by leaders, educators, and organizations across Alameda County.
+		</p>
+
+		{categories.map((category) => (
+			<EndorsementList 
+				category={category.label}
+				endorsements={endorsementsData[category.key]}
+			/>
+		))}
+	</div>
 </Layout>

@@ -1,0 +1,68 @@
+---
+interface Props {
+	heading?: string;
+	content: string;
+	backgroundColor?: 'white' | 'gray' | 'blue';
+	maxWidth?: 'narrow' | 'medium' | 'wide';
+	imageSrc?: string;
+	imageAlt?: string;
+	imagePosition?: 'left' | 'right' | 'top';
+}
+
+const { 
+	heading, 
+	content,
+	backgroundColor = 'white',
+	maxWidth = 'medium',
+	imageSrc,
+	imageAlt = '',
+	imagePosition = 'right'
+} = Astro.props;
+
+const bgClasses = {
+	white: 'bg-white',
+	gray: 'bg-gray-50',
+	blue: 'bg-blue-50'
+};
+
+const widthClasses = {
+	narrow: 'max-w-3xl',
+	medium: 'max-w-5xl',
+	wide: 'max-w-7xl'
+};
+---
+
+<section class={`py-16 px-4 ${bgClasses[backgroundColor]}`}>
+	<div class={`${widthClasses[maxWidth]} mx-auto`}>
+		{heading && (
+			<h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+				{heading}
+			</h2>
+		)}
+		
+		{imageSrc && imagePosition === 'top' && (
+			<div class="mb-8 rounded-lg overflow-hidden shadow-lg">
+				<img src={imageSrc} alt={imageAlt} class="w-full h-auto object-cover" />
+			</div>
+		)}
+		
+		{imageSrc && (imagePosition === 'left' || imagePosition === 'right') ? (
+			<div class={`grid md:grid-cols-2 gap-8 items-center ${imagePosition === 'left' ? 'md:grid-flow-dense' : ''}`}>
+				<div class={`prose prose-lg max-w-none text-gray-700 leading-relaxed ${imagePosition === 'left' ? 'md:col-start-2' : ''}`}>
+					<slot>
+						<p>{content}</p>
+					</slot>
+				</div>
+				<div class={`rounded-lg overflow-hidden shadow-lg ${imagePosition === 'left' ? 'md:col-start-1 md:row-start-1' : ''}`}>
+					<img src={imageSrc} alt={imageAlt} class="w-full h-auto object-cover" />
+				</div>
+			</div>
+		) : (
+			<div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+				<slot>
+					<p>{content}</p>
+				</slot>
+			</div>
+		)}
+	</div>
+</section>

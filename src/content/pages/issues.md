@@ -1,31 +1,3 @@
-Home
-
-Home
-
-Alysse
-
-Alysse
-
-Issues
-
-Issues
-
-Endorsements
-
-Endorsements
-
-Volunteer
-
-Volunteer
-
-Resources
-
-Resources
-
-More
-
-More
-
 Quality & Equality - It won't happen by chance. It happens by change.
 
 Break the School to Prison Pipeline
@@ -52,7 +24,7 @@ Personalize learning for equity & agency
 
 Learning is deeply satisfying. If going to school isn’t exciting, we are doing school wrong. The factory model of schooling has tried for a century to train public school students for the worst jobs of adulthood - punching a clock, filling out forms, doing repetitive tasks, sitting in rows. The most prestigious private schools do the opposite: personalizing learning, integrating subjects, flexing the calendar, and building students' agency, choice, and voice. Pandemic schooling has created the opportunity to build back better, with learning systems that meet kids where they are and let every student succeed;
 
-​
+
 
 Delivered:
 
@@ -71,4 +43,3 @@ Positioned Alameda County to lead in the post-pandemic redesign of instruction, 
 Impact: Students who discover not just what they can do — but who they are, and who they want to become.
 
 Paid for by Reelect Alysse Castro for Alameda County Superintendent of Schools 2026 FPPC#1484962
-

@@ -1,0 +1,53 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string;
+	backgroundImage?: string;
+	ctaText?: string;
+	ctaLink?: string;
+	centered?: boolean;
+}
+
+const { 
+	title, 
+	subtitle, 
+	backgroundImage, 
+	ctaText, 
+	ctaLink,
+	centered = true 
+} = Astro.props;
+
+const containerClass = centered 
+	? "text-center" 
+	: "text-left";
+---
+
+<section 
+	class={`relative py-20 px-4 ${backgroundImage ? 'bg-cover bg-center' : 'bg-gradient-to-br from-blue-50 to-blue-100'}`}
+	style={backgroundImage ? `background-image: url('${backgroundImage}')` : ''}
+>
+	{backgroundImage && (
+		<div class="absolute inset-0 bg-black bg-opacity-40"></div>
+	)}
+	
+	<div class={`relative max-w-7xl mx-auto ${containerClass}`}>
+		<h1 class={`text-5xl md:text-6xl font-bold mb-6 ${backgroundImage ? 'text-white' : 'text-blue-900'}`}>
+			{title}
+		</h1>
+		
+		{subtitle && (
+			<p class={`text-xl md:text-2xl mb-8 max-w-3xl ${centered ? 'mx-auto' : ''} ${backgroundImage ? 'text-white' : 'text-gray-700'}`}>
+				{subtitle}
+			</p>
+		)}
+		
+		{ctaText && ctaLink && (
+			<a 
+				href={ctaLink} 
+				class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+			>
+				{ctaText}
+			</a>
+		)}
+	</div>
+</section>
