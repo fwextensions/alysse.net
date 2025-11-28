@@ -20,10 +20,32 @@ const navItems = [
         </a>
       ))}
     </nav>
-    <button class="md:hidden text-gray-600 focus:outline-none">
+    <button id="mobile-menu-btn" class="md:hidden text-gray-600 focus:outline-none" aria-label="Toggle menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
   </div>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+      {navItems.map((item) => (
+        <a href={item.href} class="block py-2 text-gray-600 hover:text-blue-600 font-medium transition-colors">
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
