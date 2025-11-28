@@ -1,31 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
 import EndorsementList from '../components/EndorsementList.astro';
-import endorsementsData from '../content/endorsements/endorsements.json';
+import { getCollection } from 'astro:content';
 
-// Define category display names
-const categories = [
-	{ key: 'city_and_state_leaders', label: 'City and State Leaders' },
-	{ key: 'education_leaders', label: 'Education Leaders' },
-	{ key: 'alameda_county_leaders', label: 'Alameda County Leaders' },
-	{ key: 'elected_officials', label: 'Elected Officials' },
-	{ key: 'organizations', label: 'Organizations' },
-	{ key: 'labor', label: 'Labor' },
-];
+const endorsementsEntries = await getCollection('endorsements');
+const endorsementsData = endorsementsEntries.flatMap(entry => entry.data);
 ---
 
 <Layout title="Endorsements">
-	<div class="max-w-7xl mx-auto">
-		<h1 class="text-5xl font-bold text-blue-900 mb-4">Endorsements</h1>
-		<p class="text-xl text-gray-700 mb-12">
-			Alysse is proud to be supported by leaders, educators, and organizations across Alameda County.
-		</p>
+	<HeroSection 
+		title="Endorsements" 
+		subtitle="An emerging list of partners and supporters who have endorsed before the 2026 campaign launches in January. Many more to come!"
+		centered={true}
+	/>
 
-		{categories.map((category) => (
-			<EndorsementList 
-				category={category.label}
-				endorsements={endorsementsData[category.key]}
-			/>
-		))}
-	</div>
+	<section class="py-16 px-4 bg-white">
+		<div class="max-w-7xl mx-auto">
+			{endorsementsData.map((group) => (
+				<EndorsementList 
+					category={group.category}
+					endorsements={group.endorsements}
+				/>
+			))}
+		</div>
+	</section>
 </Layout>
