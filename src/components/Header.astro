@@ -1,14 +1,14 @@
 ---
-const base = import.meta.env.BASE_URL;
+const base = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "");
 
 const navItems = [
   { href: base, label: 'Home' },
-  { href: `${base}about`, label: 'Alysse' },
-  { href: `${base}issues`, label: 'Issues' },
-  { href: `${base}endorsements`, label: 'Endorsements' },
-  { href: `${base}volunteer`, label: 'Volunteer' },
-  { href: `${base}resources`, label: 'Resources' },
-  { href: `${base}donate`, label: 'Donate' },
+  { href: `${base}/about`, label: 'Alysse' },
+  { href: `${base}/issues`, label: 'Issues' },
+  { href: `${base}/endorsements`, label: 'Endorsements' },
+  { href: `${base}/volunteer`, label: 'Volunteer' },
+  { href: `${base}/resources`, label: 'Resources' },
+  { href: `${base}/donate`, label: 'Donate' },
 ];
 ---
 
