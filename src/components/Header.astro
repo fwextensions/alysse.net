@@ -1,18 +1,20 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'Alysse' },
-  { href: '/issues', label: 'Issues' },
-  { href: '/endorsements', label: 'Endorsements' },
-  { href: '/volunteer', label: 'Volunteer' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/donate', label: 'Donate' },
+  { href: base, label: 'Home' },
+  { href: `${base}about`, label: 'Alysse' },
+  { href: `${base}issues`, label: 'Issues' },
+  { href: `${base}endorsements`, label: 'Endorsements' },
+  { href: `${base}volunteer`, label: 'Volunteer' },
+  { href: `${base}resources`, label: 'Resources' },
+  { href: `${base}donate`, label: 'Donate' },
 ];
 ---
 
 <header class="bg-white shadow-sm">
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-blue-800">Alysse Castro</a>
+    <a href={base} class="text-2xl font-bold text-blue-800">Alysse Castro</a>
     <nav class="hidden md:flex space-x-6">
       {navItems.map((item) => (
         <a href={item.href} class="text-gray-600 hover:text-blue-600 font-medium transition-colors">
