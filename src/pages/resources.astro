@@ -1,8 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ImageGallery from '../components/ImageGallery.astro';
+
+import resource1 from '../assets/img/gallery/resources-1.jpg';
+import resource2 from '../assets/img/gallery/resources-2.jpg';
+import resource3 from '../assets/img/gallery/resources-3.jpg';
+import resource4 from '../assets/img/gallery/resources-4.jpg';
+import resource5 from '../assets/img/gallery/resources-5.jpg';
+import resource6 from '../assets/img/gallery/resources-6.jpg';
+import resource7 from '../assets/img/gallery/resources-7.jpg';
+import resource8 from '../assets/img/gallery/resources-8.jpg';
+import resource9 from '../assets/img/gallery/resources-9.jpg';
+import resource10 from '../assets/img/gallery/resources-10.jpg';
+import resource11 from '../assets/img/gallery/resources-11.jpg';
+import resource12 from '../assets/img/gallery/resources-12.jpg';
+import resource13 from '../assets/img/gallery/resources-13.jpg';
+
+const galleryImages = [
+	{ src: resource1, alt: "Campaign photo" },
+	{ src: resource2, alt: "Campaign photo" },
+	{ src: resource3, alt: "Campaign photo" },
+	{ src: resource4, alt: "Campaign photo" },
+	{ src: resource5, alt: "Campaign photo" },
+	{ src: resource6, alt: "Campaign photo" },
+	{ src: resource7, alt: "Campaign photo" },
+	{ src: resource8, alt: "Campaign photo" },
+	{ src: resource9, alt: "Campaign photo" },
+	{ src: resource10, alt: "Campaign photo" },
+	{ src: resource11, alt: "Campaign photo" },
+	{ src: resource12, alt: "Campaign photo" },
+	{ src: resource13, alt: "Campaign photo" },
+];
 ---
 
 <Layout title="Resources">
-	<h1 class="text-4xl font-bold text-blue-900 mb-6">Resources</h1>
-	<p>Content coming soon...</p>
+	<HeroSection 
+		title="Resources" 
+		subtitle="Campaign photos and materials"
+		centered={true}
+	/>
+	
+	<section class="py-16 px-4 bg-white">
+		<div class="max-w-7xl mx-auto">
+			<div class="mb-12 text-center">
+				<h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+					Campaign Gallery
+				</h2>
+				<p class="text-lg text-gray-700 max-w-3xl mx-auto">
+					Photos from campaign events, community gatherings, and school visits throughout Alameda County.
+				</p>
+			</div>
+			
+			<ImageGallery images={galleryImages} columns={3} />
+		</div>
+	</section>
 </Layout>
