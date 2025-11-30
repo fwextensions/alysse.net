@@ -1,17 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeroSection from "../components/HeroSection.astro";
 import TextSection from "../components/TextSection.astro";
 import CTASection from "../components/CTASection.astro";
+import { Image } from "astro:assets";
+import heroImage from "../assets/img/green-coat-2-kids.jpg";
 ---
 
 <Layout title="Home">
-	<HeroSection
-		title="Reelect Alysse Castro"
-		subtitle="Alameda County Superintendent of Schools"
-		ctaText="Get Involved"
-		ctaLink="/volunteer"
-	/>
+	<section class="relative aspect-[3000/1465] flex flex-col items-center justify-center gap-6 md:gap-12 text-center text-white bg-primary-blue">
+		<Image
+			src={heroImage}
+			alt="Alysse and students"
+			class="absolute inset-0 w-full h-full object-cover opacity-75"
+			widths={[400, 768, 1024, 1280]}
+			sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 1024px"
+		/>
+		<h1 class="text-3xl md:text-8xl font-bold z-1">
+			Quality & Equality
+		</h1>
+
+		<div class="text-lg leading-[120%] md:text-2xl font-bold z-1 max-w-[80%] mx-auto">
+			The future of California goes to school every morning.
+			<br>
+			The quality of our future depends on the quality &mdash; and the equality &mdash; of those schools.
+		</div>
+	</section>
 
 	<TextSection
 		backgroundColor="lime"
