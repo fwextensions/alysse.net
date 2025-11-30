@@ -5,7 +5,7 @@ import type { ImageMetadata } from "astro";
 interface Props {
 	heading?: string;
 	content: string;
-	backgroundColor?: "white" | "gray" | "blue";
+	backgroundColor?: "white" | "gray" | "blue" | "lime" | "dark-blue";
 	maxWidth?: "narrow" | "medium" | "wide";
 	imageSrc?: ImageMetadata;
 	imageAlt?: string;
@@ -26,6 +26,8 @@ const bgClasses = {
 	white: "bg-white",
 	gray: "bg-gray-50",
 	blue: "bg-blue-50",
+	lime: "bg-primary-lime",
+	"dark-blue": "bg-primary-blue text-white",
 };
 
 const widthClasses = {
@@ -65,7 +67,7 @@ const widthClasses = {
 					class={`grid md:grid-cols-2 gap-8 items-center ${imagePosition === "left" ? "md:grid-flow-dense" : ""}`}
 				>
 					<div
-						class={`prose prose-lg max-w-none text-text-body leading-relaxed ${imagePosition === "left" ? "md:col-start-2" : ""}`}
+						class={`text-lg max-w-none text-text-body leading-relaxed ${imagePosition === "left" ? "md:col-start-2" : ""}`}
 					>
 						<slot>
 							<p>{content}</p>
@@ -84,7 +86,7 @@ const widthClasses = {
 					</div>
 				</div>
 			) : (
-				<div class="prose prose-lg max-w-none text-text-body leading-relaxed">
+				<div class="max-w-none text-lg text-text-body leading-relaxed">
 					<slot>
 						<p>{content}</p>
 					</slot>
