@@ -1,58 +1,79 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import TextSection from '../components/TextSection.astro';
-import CTASection from '../components/CTASection.astro';
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import TextSection from "../components/TextSection.astro";
+import CTASection from "../components/CTASection.astro";
 ---
 
 <Layout title="Home">
-	<HeroSection 
-		title="Alysse Castro" 
+	<HeroSection
+		title="Alysse Castro"
 		subtitle="For Alameda County Superintendent of Schools"
 		ctaText="Get Involved"
 		ctaLink="/volunteer"
 	/>
-	
-	<TextSection 
+
+	<TextSection
 		heading="Experience That Matters"
 		backgroundColor="white"
 		maxWidth="medium"
 		content=""
 	>
 		<p class="mb-4">
-			With over two decades of experience in education, Alysse Castro has dedicated her career to improving outcomes for all students in Alameda County. From classroom teacher to district administrator, she understands the challenges facing our schools and has proven solutions.
+			With over two decades of experience in education, Alysse Castro has
+			dedicated her career to improving outcomes for all students in Alameda
+			County. From classroom teacher to district administrator, she understands
+			the challenges facing our schools and has proven solutions.
 		</p>
 		<p>
-			Alysse's vision is clear: every student deserves access to quality education, regardless of their zip code. She's committed to supporting teachers, expanding career pathways, and ensuring our schools have the resources they need to succeed.
+			Alysse's vision is clear: every student deserves access to quality
+			education, regardless of their zip code. She's committed to supporting
+			teachers, expanding career pathways, and ensuring our schools have the
+			resources they need to succeed.
 		</p>
 	</TextSection>
-	
-	<TextSection 
+
+	<TextSection
 		heading="Priorities"
-		backgroundColor="gray"
+		backgroundColor="white"
 		maxWidth="wide"
 		content=""
 	>
 		<div class="grid md:grid-cols-3 gap-8">
 			<div class="text-center">
 				<div class="text-4xl mb-3">🎓</div>
-				<h3 class="text-xl font-bold text-blue-900 mb-2">Student Success</h3>
-				<p class="text-gray-600">Ensuring every student has access to high-quality education and support services</p>
+				<h3 class="text-xl font-bold text-primary-blue mb-2">
+					Student Success
+				</h3>
+				<p class="text-gray-600">
+					Ensuring every student has access to high-quality education and
+					support services
+				</p>
 			</div>
 			<div class="text-center">
 				<div class="text-4xl mb-3">👥</div>
-				<h3 class="text-xl font-bold text-blue-900 mb-2">Teacher Support</h3>
-				<p class="text-gray-600">Providing educators with resources, training, and competitive compensation</p>
+				<h3 class="text-xl font-bold text-primary-blue mb-2">
+					Teacher Support
+				</h3>
+				<p class="text-gray-600">
+					Providing educators with resources, training, and competitive
+					compensation
+				</p>
 			</div>
 			<div class="text-center">
 				<div class="text-4xl mb-3">🌟</div>
-				<h3 class="text-xl font-bold text-blue-900 mb-2">Career Pathways</h3>
-				<p class="text-gray-600">Expanding opportunities for students to explore careers and build futures</p>
+				<h3 class="text-xl font-bold text-primary-blue mb-2">
+					Career Pathways
+				</h3>
+				<p class="text-gray-600">
+					Expanding opportunities for students to explore careers and build
+					futures
+				</p>
 			</div>
 		</div>
 	</TextSection>
-	
-	<CTASection 
+
+	<CTASection
 		heading="Join Our Movement"
 		description="Together, we can build a brighter future for Alameda County students"
 		primaryButtonText="Volunteer"

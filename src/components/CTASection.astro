@@ -6,26 +6,26 @@ interface Props {
 	primaryButtonLink: string;
 	secondaryButtonText?: string;
 	secondaryButtonLink?: string;
-	backgroundColor?: 'blue' | 'gradient' | 'white';
+	backgroundColor?: "blue" | "gradient" | "white";
 }
 
-const { 
-	heading, 
+const {
+	heading,
 	description,
 	primaryButtonText,
 	primaryButtonLink,
 	secondaryButtonText,
 	secondaryButtonLink,
-	backgroundColor = 'gradient'
+	backgroundColor = "gradient",
 } = Astro.props;
 
 const bgClasses = {
-	blue: 'bg-blue-600',
-	gradient: 'bg-gradient-to-r from-blue-600 to-blue-800',
-	white: 'bg-white'
+	blue: "bg-primary-blue",
+	gradient: "bg-gradient-to-r from-primary-blue to-[#003f5a]",
+	white: "bg-white",
 };
 
-const textColor = backgroundColor === 'white' ? 'text-gray-900' : 'text-white';
+const textColor = backgroundColor === "white" ? "text-text-body" : "text-white";
 ---
 
 <section class={`py-16 px-4 ${bgClasses[backgroundColor]}`}>
@@ -33,37 +33,43 @@ const textColor = backgroundColor === 'white' ? 'text-gray-900' : 'text-white';
 		<h2 class={`text-3xl md:text-4xl font-bold mb-4 ${textColor}`}>
 			{heading}
 		</h2>
-		
-		{description && (
-			<p class={`text-lg md:text-xl mb-8 ${backgroundColor === 'white' ? 'text-gray-600' : 'text-blue-100'}`}>
-				{description}
-			</p>
-		)}
-		
+
+		{
+			description && (
+				<p
+					class={`text-lg md:text-xl mb-8 ${backgroundColor === "white" ? "text-text-body" : "text-blue-100"}`}
+				>
+					{description}
+				</p>
+			)
+		}
+
 		<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-			<a 
+			<a
 				href={primaryButtonLink}
 				class={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg ${
-					backgroundColor === 'white' 
-						? 'bg-blue-600 text-white hover:bg-blue-700' 
-						: 'bg-white text-blue-600 hover:bg-gray-100'
+					backgroundColor === "white"
+						? "bg-primary-blue text-white hover:bg-opacity-90"
+						: "bg-primary-lime text-primary-blue hover:bg-opacity-90"
 				}`}
 			>
 				{primaryButtonText}
 			</a>
-			
-			{secondaryButtonText && secondaryButtonLink && (
-				<a 
-					href={secondaryButtonLink}
-					class={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border-2 ${
-						backgroundColor === 'white'
-							? 'border-blue-600 text-blue-600 hover:bg-blue-50'
-							: 'border-white text-white hover:bg-white hover:bg-opacity-10'
-					}`}
-				>
-					{secondaryButtonText}
-				</a>
-			)}
+
+			{
+				secondaryButtonText && secondaryButtonLink && (
+					<a
+						href={secondaryButtonLink}
+						class={`px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 border-2 ${
+							backgroundColor === "white"
+								? "border-primary-blue text-primary-blue hover:bg-blue-50"
+								: "border-white text-white hover:bg-white hover:bg-opacity-10"
+						}`}
+					>
+						{secondaryButtonText}
+					</a>
+				)
+			}
 		</div>
 	</div>
 </section>

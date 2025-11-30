@@ -1,1 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --color-primary-lime: #cbdb2a;
+  --color-primary-blue: #014f6e;
+  --color-text-body: #044c6c;
+
+  --font-sans: "Lato", sans-serif;
+}
+
+@layer base {
+  body {
+    color: var(--color-text-body);
+  }
+
+  a {
+    color: var(--color-text-body);
+  }
+}
