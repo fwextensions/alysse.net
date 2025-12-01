@@ -1,28 +1,61 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import EndorsementList from '../components/EndorsementList.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import EndorsementList from "../components/EndorsementList.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 
-const endorsementsEntries = await getCollection('endorsements');
-const endorsementsData = endorsementsEntries.flatMap(entry => entry.data);
+const endorsementsEntries = await getCollection("endorsements");
+const endorsementsData = endorsementsEntries.flatMap((entry) => entry.data);
+
+const galleryEntries = await getCollection("endorsementsGallery");
+const galleryData = galleryEntries.flatMap((entry) => entry.data);
 ---
 
 <Layout title="Endorsements">
-	<HeroSection 
-		title="Endorsements" 
+	<HeroSection
+		title="Endorsements"
 		subtitle="An emerging list of partners and supporters who have endorsed before the 2026 campaign launches in January. Many more to come!"
 		centered={true}
 	/>
 
 	<section class="py-16 px-4 bg-white">
-		<div class="max-w-7xl mx-auto">
-			{endorsementsData.map((group) => (
-				<EndorsementList 
-					category={group.category}
-					endorsements={group.endorsements}
-				/>
-			))}
+		<div class="max-w-7xl mx-auto space-y-16">
+			{
+				endorsementsData.map((group) => (
+					<EndorsementList
+						category={group.category}
+						endorsements={group.endorsements}
+					/>
+				))
+			}
+
+			<div class="pt-16">
+				<h2 class="text-3xl mb-16 text-center">
+					Alysse is supported by educators and community leaders
+				</h2>
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+					{
+						galleryData.map((person) => (
+							<div class="flex flex-col items-center text-center space-y-3">
+								<Image
+									src={person.photo}
+									alt={person.name}
+									class="w-40 h-40 object-cover"
+									width={128}
+									height={128}
+								/>
+								<div>
+									<h3 class="font-bold">{person.name}</h3>
+									<p class="text-sm text-primary-blue/80 leading-tight">
+										{person.title}
+									</p>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
 		</div>
 	</section>
 </Layout>
