@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import EndorsementList from "../components/EndorsementList.astro";
+import Carousel from "../components/Carousel.astro";
+import featuredEndorsements from "../content/featured_endorsements/list.json";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
@@ -47,9 +49,7 @@ const galleryData = galleryEntries.flatMap((entry) => entry.data);
 								/>
 								<div>
 									<h3 class="font-bold">{person.name}</h3>
-									<p class="text-sm text-primary-blue/80 leading-tight">
-										{person.title}
-									</p>
+									<p class="text-sm leading-tight">{person.title}</p>
 								</div>
 							</div>
 						))
@@ -58,4 +58,6 @@ const galleryData = galleryEntries.flatMap((entry) => entry.data);
 			</div>
 		</div>
 	</section>
+
+	<Carousel data={featuredEndorsements} />
 </Layout>
