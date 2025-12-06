@@ -4,6 +4,7 @@ import TextSection from "../components/TextSection.astro";
 import CTASection from "../components/CTASection.astro";
 import { Image } from "astro:assets";
 import heroImage from "../assets/img/green-coat-2-kids.jpg";
+import { donateURL, volunteerURL } from "../utils/urls";
 ---
 
 <Layout title="Home">
@@ -127,9 +128,9 @@ import heroImage from "../assets/img/green-coat-2-kids.jpg";
 		heading="Join Us"
 		description="This campaign is about possibility, equity, and the future our children deserve. Together, we can keep building a county where every student has the tools to thrive."
 		primaryButtonText="Volunteer"
-		primaryButtonLink="/volunteer"
+		primaryButtonLink={volunteerURL}
 		secondaryButtonText="Donate"
-		secondaryButtonLink="/donate"
+		secondaryButtonLink={donateURL}
 		backgroundColor="gradient"
 	/>
 </Layout>

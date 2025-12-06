@@ -1,20 +1,27 @@
 ---
-const base = (import.meta.env.BASE_URL ?? "/").replace(/\/$/, "");
+import {
+  homeURL,
+  aboutURL,
+  issuesURL,
+  endorsementsURL,
+  resourcesURL,
+  donateURL,
+} from "../utils/urls";
 
 const navItems = [
-  { href: base, label: "Home" },
-  { href: `${base}/about`, label: "Alysse" },
-  { href: `${base}/issues`, label: "Issues" },
-  { href: `${base}/endorsements`, label: "Endorsements" },
-  //  { href: `${base}/volunteer`, label: "Volunteer" },
-  { href: `${base}/resources`, label: "Resources" },
-  { href: `${base}/donate`, label: "Donate" },
+  { href: homeURL, label: "Home" },
+  { href: aboutURL, label: "Alysse" },
+  { href: issuesURL, label: "Issues" },
+  { href: endorsementsURL, label: "Endorsements" },
+//  { href: volunteerURL, label: "Volunteer" },
+  { href: resourcesURL, label: "Resources" },
+  { href: donateURL, label: "Donate" },
 ];
 ---
 
 <header class="bg-white shadow-sm">
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href={base} class="text-2xl font-bold text-primary-blue">Alysse Castro</a
+    <a href={homeURL} class="text-2xl font-bold text-primary-blue">Alysse Castro</a
     >
     <nav class="hidden md:flex space-x-6">
       {

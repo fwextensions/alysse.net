@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import TextSection from "../components/TextSection.astro";
 import CTASection from "../components/CTASection.astro";
+import { endorsementsURL, volunteerURL } from "../utils/urls";
 ---
 
 <Layout title="About">
@@ -179,9 +180,9 @@ import CTASection from "../components/CTASection.astro";
 		heading="Support Alysse's Vision"
 		description="Join us in building a more equitable education system for all Alameda County students"
 		primaryButtonText="Get Involved"
-		primaryButtonLink="/volunteer"
+		primaryButtonLink={volunteerURL}
 		secondaryButtonText="View Endorsements"
-		secondaryButtonLink="/endorsements"
+		secondaryButtonLink={endorsementsURL}
 		backgroundColor="gradient"
 	/>
 </Layout>
