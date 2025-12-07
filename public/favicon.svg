@@ -1,4 +1,6 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="256" height="256" fill="#CEDF00"/>
-<path d="M59.58 36V73.188H82.016L46.828 181.452H28V218.656H111.64V181.732H93.36L99.188 159.532H152.08L158.172 181.732H139.892V218.656H226.86V181.452H208.016L171.736 73.188H195.28V36H59.58ZM126.048 72.076L143.484 128.436H108.048L126.048 72.076Z" fill="#004E72"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256"><svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="256" height="256" fill="#CBDB2A"></rect>
+<path d="M59.58 36V73.188H82.016L46.828 181.452H28V218.656H111.64V181.732H93.36L99.188 159.532H152.08L158.172 181.732H139.892V218.656H226.86V181.452H208.016L171.736 73.188H195.28V36H59.58ZM126.048 72.076L143.484 128.436H108.048L126.048 72.076Z" fill="#014F6E"></path>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

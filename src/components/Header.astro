@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import {
   homeURL,
   aboutURL,
@@ -7,6 +8,7 @@ import {
   resourcesURL,
   donateURL,
 } from "../utils/urls";
+import reelectLogo from "../assets/img/reelect-logo.png";
 
 const navItems = [
   { href: homeURL, label: "Home" },
@@ -21,8 +23,13 @@ const navItems = [
 
 <header class="bg-white shadow-sm">
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <a href={homeURL} class="text-2xl font-bold text-primary-blue">Alysse Castro</a
-    >
+    <a href={homeURL}>
+      <Image
+        src={reelectLogo}
+        alt="Alysse Castro"
+        class="w-[300px]"
+      />
+    </a>
     <nav class="hidden md:flex space-x-6">
       {
         navItems.map((item) => (
