@@ -21,16 +21,16 @@ const navItems = [
 ];
 ---
 
-<header class="bg-white shadow-sm">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<header>
+  <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
     <a href={homeURL}>
       <Image
         src={reelectLogo}
         alt="Alysse Castro"
-        class="w-[300px]"
+        class="w-[200px] max-w-[50cqw] md:w-[300px] md:max-w-[25cqw] "
       />
     </a>
-    <nav class="hidden md:flex space-x-6">
+    <nav class="hidden md:flex gap-[clamp(.25rem,2cqw,1.5rem)] pl-6">
       {
         navItems.map((item) => (
           <a
@@ -66,14 +66,14 @@ const navItems = [
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden bg-white border-t border-gray-100"
+    class="hidden md:hidden bg-white border-y border-gray-100 shadow-md"
   >
-    <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+    <div class="container mx-auto py-2 flex flex-col space-y-2">
       {
         navItems.map((item) => (
           <a
             href={item.href}
-            class="block py-2 text-text-body hover:text-primary-blue font-medium transition-colors"
+            class="block px-4 py-2 text-text-body hover:text-primary-blue hover:bg-primary-lime/30 font-medium transition-colors"
           >
             {item.label}
           </a>
