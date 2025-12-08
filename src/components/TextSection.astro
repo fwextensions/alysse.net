@@ -4,22 +4,28 @@ import type { ImageMetadata } from "astro";
 
 interface Props {
 	heading?: string;
-	content: string;
+	content?: string;
 	backgroundColor?: "white" | "gray" | "blue" | "lime" | "dark-blue";
 	maxWidth?: "narrow" | "medium" | "wide";
 	imageSrc?: ImageMetadata;
 	imageAlt?: string;
 	imagePosition?: "left" | "right" | "top";
+	padding?: "none" | "small" | "medium" | "large";
+	headerPosition?: "top" | "bottom";
+	class?: string;
 }
 
 const {
 	heading,
-	content,
+	content = "",
 	backgroundColor = "white",
 	maxWidth = "medium",
 	imageSrc,
 	imageAlt = "",
 	imagePosition = "right",
+	padding = "large",
+	headerPosition = "top",
+	class: className,
 } = Astro.props;
 
 const bgClasses = {
@@ -30,6 +36,13 @@ const bgClasses = {
 	"dark-blue": "bg-primary-blue text-white",
 };
 
+const paddingClasses = {
+	none: "py-0",
+	small: "py-8",
+	medium: "py-12",
+	large: "py-16",
+};
+
 const widthClasses = {
 	narrow: "max-w-3xl",
 	medium: "max-w-5xl",
@@ -37,10 +50,12 @@ const widthClasses = {
 };
 ---
 
-<section class={`py-16 px-4 ${bgClasses[backgroundColor]}`}>
+<section
+	class={`${paddingClasses[padding]} px-4 ${bgClasses[backgroundColor]} ${className || ""}`}
+>
 	<div class={`${widthClasses[maxWidth]} mx-auto`}>
 		{
-			heading && (
+			heading && headerPosition === "top" && (
 				<h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-6">
 					{heading}
 				</h2>
@@ -62,6 +77,14 @@ const widthClasses = {
 		}
 
 		{
+			heading && headerPosition === "bottom" && (
+				<h2 class="text-3xl md:text-4xl font-bold text-primary-blue mb-6">
+					{heading}
+				</h2>
+			)
+		}
+
+		{
 			imageSrc && (imagePosition === "left" || imagePosition === "right") ? (
 				<div
 					class={`grid md:grid-cols-2 gap-8 items-center ${imagePosition === "left" ? "md:grid-flow-dense" : ""}`}
@@ -70,7 +93,7 @@ const widthClasses = {
 						class={`text-lg max-w-none text-text-body leading-relaxed ${imagePosition === "left" ? "md:col-start-2" : ""}`}
 					>
 						<slot>
-							<p>{content}</p>
+							{content && <p>{content}</p>}
 						</slot>
 					</div>
 					<div
@@ -88,7 +111,7 @@ const widthClasses = {
 			) : (
 				<div class="max-w-none text-lg text-text-body leading-relaxed">
 					<slot>
-						<p>{content}</p>
+						{content && <p>{content}</p>}
 					</slot>
 				</div>
 			)
