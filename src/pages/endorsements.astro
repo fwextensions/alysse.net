@@ -3,15 +3,36 @@ import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import EndorsementList from "../components/EndorsementList.astro";
 import Carousel from "../components/Carousel.astro";
-import featuredEndorsements from "../content/featured-endorsements/list.json";
+import featuredEndorsementsJson from "../content/featured-endorsements/list.json";
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
-const endorsementsEntries = await getCollection("endorsements");
-const endorsementsData = endorsementsEntries.flatMap((entry) => entry.data);
+// endorsement categories with their display names
+const endorsementCategories = [
+	{ collection: "endorsementsAlamedaCountyLeaders", category: "Alameda County Leaders" },
+	{ collection: "endorsementsCityStateLeaders", category: "City and State Leaders" },
+	{ collection: "endorsementsEducationLeaders", category: "Education Leaders" },
+	{ collection: "endorsementsEducation", category: "Education" },
+	{ collection: "endorsementsTeachersAssociations", category: "Teachers Associations" },
+	{ collection: "endorsementsFormerAcoeLeaders", category: "Former ACOE Leaders" },
+	{ collection: "endorsementsPoliticalOrganizations", category: "Political Organizations" },
+	{ collection: "endorsementsElectedOfficials", category: "Elected and Appointed Officials" },
+	{ collection: "endorsementsLabor", category: "Labor" },
+] as const;
 
+// fetch all endorsement categories
+const endorsementsData = await Promise.all(
+	endorsementCategories.map(async ({ collection, category }) => {
+		const entries = await getCollection(collection);
+		const data = entries[0]?.data;
+		return { category, endorsements: data?.endorsements || [] };
+	})
+);
+
+// fetch gallery data
 const galleryEntries = await getCollection("endorsementsGallery");
-const galleryData = galleryEntries.flatMap((entry) => entry.data);
+const galleryData = galleryEntries[0]?.data?.endorsements || [];
+
 ---
 
 <Layout title="Endorsements">
@@ -59,5 +80,5 @@ const galleryData = galleryEntries.flatMap((entry) => entry.data);
 		</div>
 	</section>
 
-	<Carousel data={featuredEndorsements} />
+	<Carousel data={featuredEndorsementsJson} />
 </Layout>

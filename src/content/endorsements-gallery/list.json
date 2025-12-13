@@ -1,0 +1,33 @@
+{
+	"endorsements": [
+		{ "name": "Aisha Wahab", "title": "Hayward City Council", "photo": "../../assets/img/endorsements/aisha-wahab.jpg" },
+		{ "name": "Kate Harrison", "title": "Berkeley Vice Mayor", "photo": "../../assets/img/endorsements/kate-harrison.jpg" },
+		{ "name": "Victor Aguilar, Jr", "title": "San Leandro City Council", "photo": "../../assets/img/endorsements/victor-aguilar.jpg" },
+		{ "name": "Courtney Welch", "title": "Emeryville City Council", "photo": "../../assets/img/endorsements/courtney-welch.jpg" },
+		{ "name": "Brittni Kiick", "title": "Livermore City Council", "photo": "../../assets/img/endorsements/brittni-kiick.jpg" },
+		{ "name": "James Aguilar", "title": "San Leandro School Board President", "photo": "../../assets/img/endorsements/james-aguilar.jpg" },
+		{ "name": "Sheila Jordan", "title": "Alameda County Superintendent of Schools 1998-2014", "photo": "../../assets/img/endorsements/sheila-jordan.jpg" },
+		{ "name": "Richard Valle", "title": "Alameda County Board of Supervisors", "photo": "../../assets/img/endorsements/richard-valle.jpg" },
+		{ "name": "Angela Normand", "title": "Alameda County Board of Education Trustee", "photo": "../../assets/img/endorsements/angela-normand.jpg" },
+		{ "name": "VanCedric Williams", "title": "Oakland Unified School District Trustee", "photo": "../../assets/img/endorsements/vancedric-williams.jpg" },
+		{ "name": "Melissa Shuen-Mallory", "title": "New Haven Unified School Board President", "photo": "../../assets/img/endorsements/melissa-shuen-mallory.jpg" },
+		{ "name": "Regina Chagolla", "title": "Emeryville Unified Schools Trustee", "photo": "../../assets/img/endorsements/regina-chagolla.jpg" },
+		{ "name": "Sara Lamnin", "title": "Hayward City Council Member", "photo": "../../assets/img/endorsements/sara-lamnin.jpg" },
+		{ "name": "David Kakishiba", "title": "former Oakland Unified School District Trustee", "photo": "../../assets/img/endorsements/david-kakishiba.jpg" },
+		{ "name": "Mike Hutchinson", "title": "Oakland Unified School District Trustee", "photo": "../../assets/img/endorsements/mike-hutchinson.jpg" },
+		{ "name": "Vinnie Bacon", "title": "Fremont City Council Member 2012-2020", "photo": "../../assets/img/endorsements/vinnie-bacon.jpg" },
+		{ "name": "Mark Green", "title": "Union City Mayor 1993-2012", "photo": "../../assets/img/endorsements/mark-green.jpg" },
+		{ "name": "David Muhammad", "title": "Criminal Justice Reformer", "photo": "../../assets/img/endorsements/david-muhammad.jpg" },
+		{ "name": "Zach Norris", "title": "Activist & Author Without Policing, Prisons, and Punishment", "photo": "../../assets/img/endorsements/zach-norris.jpg" },
+		{ "name": "Vamsey Palagummi", "title": "Chair, Alameda County Juvenile Justice & Delinquency Prevention Commission", "photo": "../../assets/img/endorsements/vamsey-palagummi.jpg" },
+		{ "name": "Elana Metz", "title": "Vice Chair, Alameda County Juvenile Justice & Delinquency Prevention Commission", "photo": "../../assets/img/endorsements/elana-metz.jpg" },
+		{ "name": "Trish Herrera Spencer", "title": "Alameda City Council", "photo": "../../assets/img/endorsements/trish-herrera-spencer.jpg" },
+		{ "name": "Matt Alexander", "title": "San Francisco Board of Education", "photo": "../../assets/img/endorsements/matt-alexander.jpg" },
+		{ "name": "Chelsea Bonini", "title": "San Mateo County Board of Education", "photo": "../../assets/img/endorsements/chelsea-bonini.jpg" },
+		{ "name": "Jason Arenas", "title": "former ACOE Program Director", "photo": "../../assets/img/endorsements/jason-arenas.jpg" },
+		{ "name": "Louise Music", "title": "Former ACOE Executive Director of Integrated Arts Learning", "photo": "../../assets/img/endorsements/louise-music.jpg" },
+		{ "name": "Dr. \"Jag\" Lathan", "title": "former ACOE Chief of Learning & Accountability", "photo": "../../assets/img/endorsements/jag-lathan.jpg" },
+		{ "name": "Dr. Leena Bakshi", "title": "Former ACOE Science Director", "photo": "../../assets/img/endorsements/leena-bakshi.jpg" },
+		{ "name": "Seth Steward", "title": "Chief of Staff Oakland District 1", "photo": "../../assets/img/endorsements/seth-steward.webp" }
+	]
+}

@@ -1,0 +1,11 @@
+{
+	"endorsements": [
+		{ "name": "Alameda Labor Council", "title": "" },
+		{ "name": "IBEW Local 595", "title": "International Brotherhood of Electrical Workers" },
+		{ "name": "SMW Local 104", "title": "Sheet Metal Workers" },
+		{ "name": "SEIU 1021", "title": "Service Employees International Union" },
+		{ "name": "Building and Construction Trades Council of Alameda County (Dual)", "title": "" },
+		{ "name": "OE3", "title": "Operating Engineers Local 3" },
+		{ "name": "UA Local 342", "title": "Plumbers and Pipefitters" }
+	]
+}
