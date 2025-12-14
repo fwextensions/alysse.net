@@ -5,7 +5,8 @@ import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
 
-const isProd = import.meta.env.PROD;
+// Check if building for GitHub Pages (set by workflow)
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,11 +14,14 @@ export default defineConfig({
   // so Keystatic dev routes work properly
   site: 'https://fwextensions.github.io',
 
-  base: isProd ? '/alysse.net' : undefined,
+  base: isGitHubPages ? '/alysse.net' : undefined,
 
   vite: {
     plugins: [tailwindcss()],
   },
 
-  integrations: [react(), markdoc(), keystatic()],
+  // Keystatic only in dev mode (requires server-side rendering)
+  integrations: isGitHubPages
+    ? [react(), markdoc()]
+    : [react(), markdoc(), keystatic()],
 });
