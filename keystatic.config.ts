@@ -39,9 +39,9 @@ export default config({
 				photo: fields.image({
 					label: "Photo",
 					directory: "src/assets/img/endorsements",
-					publicPath: "../../assets/img/endorsements/",
+					publicPath: "../../../assets/img/endorsements/",
 				}),
-				quote: fields.mdx({ label: "Quote" }),
+				quote: fields.markdoc({ label: "Quote" }),
 			},
 		}),
 
@@ -57,10 +57,10 @@ export default config({
 				image: fields.image({
 					label: "Image",
 					directory: "src/assets/img/issues",
-					publicPath: "../../assets/img/issues/",
+					publicPath: "../../../assets/img/issues/",
 				}),
 				imageAlt: fields.text({ label: "Image Alt Text" }),
-				content: fields.mdx({ label: "Content" }),
+				content: fields.markdoc({ label: "Content" }),
 			},
 		}),
 
@@ -73,7 +73,7 @@ export default config({
 			entryLayout: "content",
 			schema: {
 				title: fields.slug({ name: { label: "Title" } }),
-				content: fields.mdx({ label: "Content" }),
+				content: fields.markdoc({ label: "Content" }),
 			},
 		}),
 	},

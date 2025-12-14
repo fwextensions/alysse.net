@@ -15,16 +15,18 @@ interface Props {
 
 const { data } = Astro.props;
 
-// Glob all images in endorsements folder
+// Glob all images in endorsements folder (including subdirectories)
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../assets/img/endorsements/*.{jpeg,jpg,png,gif,webp}",
+  "../assets/img/endorsements/**/*.{jpeg,jpg,png,gif,webp}",
 );
 
 const slides = await Promise.all(
   data.map(async (item) => {
-    const filename = item.photo.split("/").pop();
+    // Extract path after "assets/img/endorsements/"
+    const pathMatch = item.photo.match(/endorsements\/(.+)$/);
+    const relativePath = pathMatch ? pathMatch[1] : item.photo.split("/").pop();
     // Construct the key as expected by the glob (relative to this component)
-    const globKey = `../assets/img/endorsements/${filename}`;
+    const globKey = `../assets/img/endorsements/${relativePath}`;
 
     if (!images[globKey]) {
       console.warn(
