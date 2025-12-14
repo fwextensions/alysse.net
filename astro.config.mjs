@@ -5,13 +5,15 @@ import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
 
+const isProd = import.meta.env.PROD;
+
 // https://astro.build/config
 export default defineConfig({
-  // GitHub Pages configuration
-  // The workflow will override these with dynamic values during deployment
+  // GitHub Pages configuration - only apply base path in production
+  // so Keystatic dev routes work properly
   site: 'https://fwextensions.github.io',
 
-  base: '/alysse.net',
+  base: isProd ? '/alysse.net' : undefined,
 
   vite: {
     plugins: [tailwindcss()],

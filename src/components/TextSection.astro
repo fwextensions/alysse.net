@@ -51,7 +51,7 @@ const widthClasses = {
 ---
 
 <section
-	class={`${paddingClasses[padding]} px-4 ${bgClasses[backgroundColor]} ${className || ""}`}
+	class={`${paddingClasses[padding]} px-0 md:px-8 ${bgClasses[backgroundColor]} ${className || ""}`}
 >
 	<div class={`${widthClasses[maxWidth]} mx-auto`}>
 		{
@@ -64,7 +64,7 @@ const widthClasses = {
 
 		{
 			imageSrc && imagePosition === "top" && (
-				<div class="mb-8 rounded-lg overflow-hidden shadow-lg">
+				<div class="mb-8 rounded-sm overflow-hidden shadow-lg">
 					<Image
 						src={imageSrc}
 						alt={imageAlt}
@@ -97,7 +97,7 @@ const widthClasses = {
 						</slot>
 					</div>
 					<div
-						class={`rounded-lg overflow-hidden shadow-lg ${imagePosition === "left" ? "md:col-start-1 md:row-start-1" : ""}`}
+						class={`rounded-sm overflow-hidden shadow-lg ${imagePosition === "left" ? "md:col-start-1 md:row-start-1" : ""}`}
 					>
 						<Image
 							src={imageSrc}

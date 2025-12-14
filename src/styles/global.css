@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import "tailwindcss";
+@source "./src/content/**/*.mdoc";
 
 @theme {
   --color-primary-lime: #cbdb2a;
@@ -16,5 +17,25 @@
 
   a {
     color: var(--color-text-body);
+  }
+}
+
+@layer components {
+  .prose {
+    h2 {
+      @apply text-2xl font-bold leading-tight mb-2 mt-6;
+    }
+
+    p {
+      @apply my-2;
+    }
+
+    ul {
+      @apply my-4;
+
+      li {
+        @apply my-1;
+      }
+    }
   }
 }

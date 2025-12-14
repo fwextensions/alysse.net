@@ -30,8 +30,9 @@ export default config({
 		featuredEndorsements: collection({
 			label: "Featured Endorsements",
 			slugField: "author",
-			path: "src/content/featured-endorsements/*",
-			format: { contentField: "quote" },
+			path: "src/content/featured-endorsements/*/",
+			format: { contentField: "quote", data: "yaml" },
+			entryLayout: "content",
 			schema: {
 				author: fields.slug({ name: { label: "Author Name" } }),
 				title: fields.text({ label: "Title/Role" }),
@@ -48,8 +49,9 @@ export default config({
 		issues: collection({
 			label: "Issues",
 			slugField: "heading",
-			path: "src/content/issues/*",
-			format: { contentField: "content" },
+			path: "src/content/issues/*/",
+			format: { contentField: "content", data: "yaml" },
+			entryLayout: "content",
 			schema: {
 				heading: fields.slug({ name: { label: "Heading" } }),
 				image: fields.image({
@@ -66,8 +68,9 @@ export default config({
 		pages: collection({
 			label: "Pages",
 			slugField: "title",
-			path: "src/content/pages/*",
-			format: { contentField: "content" },
+			path: "src/content/pages/*/",
+			format: { contentField: "content", data: "yaml" },
+			entryLayout: "content",
 			schema: {
 				title: fields.slug({ name: { label: "Title" } }),
 				content: fields.mdx({ label: "Content" }),
