@@ -1,26 +1,5 @@
 import { config, fields, collection, singleton } from "@keystatic/core";
 
-// helper to create an endorsement category singleton
-function createEndorsementCategorySingleton(label: string, path: string) {
-	return singleton({
-		label,
-		path: `src/content/endorsements/${path}`,
-		format: { data: "json" },
-		schema: {
-			endorsements: fields.array(
-				fields.object({
-					name: fields.text({ label: "Name", validation: { isRequired: true } }),
-					title: fields.text({ label: "Title" }),
-				}),
-				{
-					label: "Endorsements",
-					itemLabel: (props) => props.fields.name.value || "New Endorsement",
-				}
-			),
-		},
-	});
-}
-
 export default config({
 	storage: {
 		kind: "github",
@@ -62,6 +41,27 @@ export default config({
 				}),
 				imageAlt: fields.text({ label: "Image Alt Text" }),
 				content: fields.markdoc({ label: "Content" }),
+			},
+		}),
+
+		// endorsement categories (dynamic, like issues)
+		endorsementCategories: collection({
+			label: "Endorsement Categories",
+			slugField: "name",
+			path: "src/content/endorsement-categories/*/",
+			format: { data: "json" },
+			schema: {
+				name: fields.slug({ name: { label: "Category Name" } }),
+				endorsements: fields.array(
+					fields.object({
+						name: fields.text({ label: "Name", validation: { isRequired: true } }),
+						title: fields.text({ label: "Title" }),
+					}),
+					{
+						label: "Endorsements",
+						itemLabel: (props) => props.fields.name.value || "New Endorsement",
+					}
+				),
 			},
 		}),
 
@@ -124,42 +124,23 @@ export default config({
 			},
 		}),
 
-		// endorsement categories as separate singletons
-		endorsementsAlamedaCountyLeaders: createEndorsementCategorySingleton(
-			"Endorsements: Alameda County Leaders",
-			"alameda-county-leaders"
-		),
-		endorsementsCityStateLeaders: createEndorsementCategorySingleton(
-			"Endorsements: City and State Leaders",
-			"city-state-leaders"
-		),
-		endorsementsEducationLeaders: createEndorsementCategorySingleton(
-			"Endorsements: Education Leaders",
-			"education-leaders"
-		),
-		endorsementsEducation: createEndorsementCategorySingleton(
-			"Endorsements: Education",
-			"education"
-		),
-		endorsementsTeachersAssociations: createEndorsementCategorySingleton(
-			"Endorsements: Teachers Associations",
-			"teachers-associations"
-		),
-		endorsementsFormerAcoeLeaders: createEndorsementCategorySingleton(
-			"Endorsements: Former ACOE Leaders",
-			"former-acoe-leaders"
-		),
-		endorsementsPoliticalOrganizations: createEndorsementCategorySingleton(
-			"Endorsements: Political Organizations",
-			"political-organizations"
-		),
-		endorsementsElectedOfficials: createEndorsementCategorySingleton(
-			"Endorsements: Elected and Appointed Officials",
-			"elected-officials"
-		),
-		endorsementsLabor: createEndorsementCategorySingleton(
-			"Endorsements: Labor",
-			"labor"
-		),
+		// endorsements page configuration
+		endorsementsPage: singleton({
+			label: "Endorsements Page",
+			path: "src/content/endorsements-page/config",
+			format: { data: "json" },
+			schema: {
+				categoryOrder: fields.array(
+					fields.relationship({
+						label: "Category",
+						collection: "endorsementCategories",
+					}),
+					{
+						label: "Category Order",
+						itemLabel: (props) => props.value || "Select a category",
+					}
+				),
+			},
+		}),
 	},
 });

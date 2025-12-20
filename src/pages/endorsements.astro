@@ -7,27 +7,21 @@ import featuredEndorsementsJson from "../content/featured-endorsements/list.json
 import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 
-// endorsement categories with their display names
-const endorsementCategories = [
-	{ collection: "endorsementsAlamedaCountyLeaders", category: "Alameda County Leaders" },
-	{ collection: "endorsementsCityStateLeaders", category: "City and State Leaders" },
-	{ collection: "endorsementsEducationLeaders", category: "Education Leaders" },
-	{ collection: "endorsementsEducation", category: "Education" },
-	{ collection: "endorsementsTeachersAssociations", category: "Teachers Associations" },
-	{ collection: "endorsementsFormerAcoeLeaders", category: "Former ACOE Leaders" },
-	{ collection: "endorsementsPoliticalOrganizations", category: "Political Organizations" },
-	{ collection: "endorsementsElectedOfficials", category: "Elected and Appointed Officials" },
-	{ collection: "endorsementsLabor", category: "Labor" },
-] as const;
+// fetch page config with category order
+const pageConfig = await getEntry("endorsementsPage", "config");
+const categoryOrder = pageConfig?.data?.categoryOrder || [];
 
 // fetch all endorsement categories
-const endorsementsData = await Promise.all(
-	endorsementCategories.map(async ({ collection, category }) => {
-		const entries = await getCollection(collection);
-		const data = entries[0]?.data;
-		return { category, endorsements: data?.endorsements || [] };
-	})
-);
+const allCategories = await getCollection("endorsementCategories");
+
+// build endorsements data in the specified order
+const endorsementsData = categoryOrder
+	.map((categoryID) => allCategories.find((cat) => cat.id === categoryID))
+	.filter((cat) => cat !== undefined)
+	.map((cat) => ({
+		category: cat.data.name,
+		endorsements: cat.data.endorsements || [],
+	}));
 
 // fetch gallery data
 const galleryEntries = await getCollection("endorsementsGallery");

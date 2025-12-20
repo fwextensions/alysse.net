@@ -1,51 +1,25 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
-// endorsement schema shared across category singletons
-const endorsementSchema = z.object({
-	endorsements: z.array(z.object({
-		name: z.string(),
-		title: z.string(),
-	})),
-});
-
 export const collections = {
-	// endorsement category singletons
-	endorsementsAlamedaCountyLeaders: defineCollection({
-		loader: glob({ pattern: "alameda-county-leaders.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
+	// endorsement categories collection (dynamic)
+	endorsementCategories: defineCollection({
+		loader: glob({ pattern: "*/index.json", base: "src/content/endorsement-categories" }),
+		schema: z.object({
+			name: z.string(),
+			endorsements: z.array(z.object({
+				name: z.string(),
+				title: z.string(),
+			})),
+		}),
 	}),
-	endorsementsCityStateLeaders: defineCollection({
-		loader: glob({ pattern: "city-state-leaders.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsEducationLeaders: defineCollection({
-		loader: glob({ pattern: "education-leaders.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsEducation: defineCollection({
-		loader: glob({ pattern: "education.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsTeachersAssociations: defineCollection({
-		loader: glob({ pattern: "teachers-associations.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsFormerAcoeLeaders: defineCollection({
-		loader: glob({ pattern: "former-acoe-leaders.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsPoliticalOrganizations: defineCollection({
-		loader: glob({ pattern: "political-organizations.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsElectedOfficials: defineCollection({
-		loader: glob({ pattern: "elected-officials.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
-	}),
-	endorsementsLabor: defineCollection({
-		loader: glob({ pattern: "labor.json", base: "src/content/endorsements" }),
-		schema: endorsementSchema,
+
+	// endorsements page config singleton
+	endorsementsPage: defineCollection({
+		loader: glob({ pattern: "config.json", base: "src/content/endorsements-page" }),
+		schema: z.object({
+			categoryOrder: z.array(z.string()),
+		}),
 	}),
 
 	// endorsements gallery singleton
