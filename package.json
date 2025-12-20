@@ -5,10 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:cf": "astro build",
     "preview": "astro preview",
+    "deploy": "astro build && wrangler deploy",
+    "deploy:cf": "wrangler deploy",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/markdoc": "^0.15.10",
     "@astrojs/react": "^4.4.2",
     "@keystatic/astro": "^5.0.6",
@@ -21,5 +25,8 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "wrangler": "^4.54.0"
   }
 }

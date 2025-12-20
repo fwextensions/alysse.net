@@ -23,7 +23,8 @@ function createEndorsementCategorySingleton(label: string, path: string) {
 
 export default config({
 	storage: {
-		kind: "local",
+		kind: "github",
+		repo: "fwextensions/alysse.net",
 	},
 	collections: {
 		// featured endorsements with rich text quotes

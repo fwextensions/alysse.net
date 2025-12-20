@@ -1,0 +1,5 @@
+name = "alysse-net"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat", "expose_global_message_channel"]
+main = "./dist/_worker.js/index.js"
+assets = { directory = "./dist", binding = "ASSETS" }
