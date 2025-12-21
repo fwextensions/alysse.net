@@ -1,49 +1,13 @@
 import { config, fields, collection, singleton } from "@keystatic/core";
 
+const isLocal = import.meta.env.PUBLIC_KEYSTATIC_STORAGE === "local";
+
 export default config({
-	storage: {
-		kind: "github",
-		repo: "fwextensions/alysse.net",
-	},
+	storage: isLocal
+		? { kind: "local" }
+		: { kind: "github", repo: "fwextensions/alysse.net" },
+
 	collections: {
-		// featured endorsements with rich text quotes
-		featuredEndorsements: collection({
-			label: "Featured Endorsements",
-			slugField: "author",
-			path: "src/content/featured-endorsements/*/",
-			format: { contentField: "quote", data: "yaml" },
-			entryLayout: "content",
-			schema: {
-				author: fields.slug({ name: { label: "Author Name" } }),
-				title: fields.text({ label: "Title/Role" }),
-				photo: fields.image({
-					label: "Photo",
-					directory: "src/assets/img/endorsements",
-					publicPath: "../../../assets/img/endorsements/",
-				}),
-				quote: fields.markdoc({ label: "Quote" }),
-			},
-		}),
-
-		// individual issues
-		issues: collection({
-			label: "Issues",
-			slugField: "heading",
-			path: "src/content/issues/*/",
-			format: { contentField: "content", data: "yaml" },
-			entryLayout: "content",
-			schema: {
-				heading: fields.slug({ name: { label: "Heading" } }),
-				image: fields.image({
-					label: "Image",
-					directory: "src/assets/img/issues",
-					publicPath: "../../../assets/img/issues/",
-				}),
-				imageAlt: fields.text({ label: "Image Alt Text" }),
-				content: fields.markdoc({ label: "Content" }),
-			},
-		}),
-
 		// endorsement categories (dynamic, like issues)
 		endorsementCategories: collection({
 			label: "Endorsement Categories",
@@ -65,6 +29,44 @@ export default config({
 			},
 		}),
 
+		// featured endorsements with rich text quotes and one photo
+		featuredEndorsements: collection({
+			label: "Featured Endorsements",
+			slugField: "author",
+			path: "src/content/featured-endorsements/*/",
+			format: { contentField: "quote", data: "yaml" },
+			entryLayout: "content",
+			schema: {
+				author: fields.slug({ name: { label: "Author Name" } }),
+				title: fields.text({ label: "Title/Role" }),
+				photo: fields.image({
+					label: "Photo",
+					directory: "src/assets/img/endorsements",
+					publicPath: "../../../assets/img/endorsements/",
+				}),
+				quote: fields.markdoc({ label: "Quote" }),
+			},
+		}),
+
+		// individual issues, each with one image
+		issues: collection({
+			label: "Issues",
+			slugField: "heading",
+			path: "src/content/issues/*/",
+			format: { contentField: "content", data: "yaml" },
+			entryLayout: "content",
+			schema: {
+				heading: fields.slug({ name: { label: "Heading" } }),
+				image: fields.image({
+					label: "Image",
+					directory: "src/assets/img/issues",
+					publicPath: "../../../assets/img/issues/",
+				}),
+				imageAlt: fields.text({ label: "Image Alt Text" }),
+				content: fields.markdoc({ label: "Content" }),
+			},
+		}),
+
 		// general pages like About
 		pages: collection({
 			label: "Pages",
@@ -78,6 +80,7 @@ export default config({
 			},
 		}),
 	},
+
 	singletons: {
 		// issues page configuration
 		issuesPage: singleton({

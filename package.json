@@ -4,6 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:local": "PUBLIC_KEYSTATIC_STORAGE=local astro dev",
+    "dev:github": "PUBLIC_KEYSTATIC_STORAGE=github astro dev",
     "build": "astro build",
     "build:cf": "astro build",
     "preview": "astro preview",
