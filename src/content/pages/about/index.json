@@ -1,0 +1,60 @@
+{
+  "name": "About",
+  "sections": [
+    {
+      "discriminant": "hero",
+      "value": {
+        "title": "Meet Alysse",
+        "subtitle": "A lifelong educator fighting for the students the system wasn't designed for",
+        "centered": true
+      }
+    },
+    {
+      "discriminant": "textSection",
+      "value": {
+        "backgroundColor": "white",
+        "maxWidth": "medium",
+        "content": "Alysse Castro is the Alameda County Superintendent of Schools, a lifelong educator who has built her career fighting for the students the system wasn't designed for. A former classroom teacher, principal, and county leader, Alysse has dedicated over two decades to transforming the conditions that hold vulnerable students back — and building the systems that allow them to thrive. She brings a rare blend of deep instructional expertise, technical mastery of Ed Code and school finance, and an unwavering commitment to equity.\n\nSince taking office as County Superintendent, Alysse has led with a simple belief: students who face the greatest barriers deserve the strongest, most innovative public systems. Her leadership has been defined by turning red tape into real solutions, modernizing outdated structures, and delivering measurable results for young people who are too often overlooked — youth in juvenile court schools, students experiencing homelessness, multilingual learners, and those navigating generational poverty.\n"
+      }
+    },
+    {
+      "discriminant": "textSection",
+      "value": {
+        "heading": "Delivering System-Changing Results for the Students Who Need It Most",
+        "backgroundColor": "white",
+        "maxWidth": "medium",
+        "content": "Under Alysse's leadership, the Alameda County Office of Education sponsored and passed its first-ever piece of legislation — and it passed unanimously. **AB 2181**, now awaiting signature, ensures students in juvenile court schools have a full pathway to a high school diploma, correcting decades-old gaps in the Education Code. The bill expands graduation opportunities, reduces unnecessary barriers, and provides new avenues for students whose educational journeys were interrupted by the juvenile justice system. The work behind AB 2181 reflects exactly who Alysse is: an advocate who knows how to navigate the complexity of state law — and who uses that expertise to dismantle systemic inequities.\n\n<div class=\"mt-6 p-6 bg-blue-50 border-l-4 border-blue-600\"> <h3 class=\"text-xl font-bold text-blue-900 mb-3\">🏆 California Golden Bell Award</h3>\n\nAlysse also led Alameda County to win a California Golden Bell Award for its groundbreaking workforce diversification effort, the **Professional Advancement and Training Hub (PATH)**.\n\nLaunched just two years ago, PATH has already:\n\n- ✓ Helped **1,500 residents** plan careers in education\n- ✓ Funded credentials for **130 multilingual intern teachers**\n- ✓ Supported **100 new instructional aides**\n- ✓ Graduated **54 residents** from a local teacher residency\n- ✓ Helped **200 educators** earn clear credentials\n\nThe program is now considered a statewide model for how government can build an educator workforce that reflects and serves diverse communities — and solve staffing shortages with local talent.\n</div>\n"
+      }
+    },
+    {
+      "discriminant": "textSection",
+      "value": {
+        "heading": "Transforming Systems by Centering the Most Vulnerable",
+        "backgroundColor": "white",
+        "maxWidth": "medium",
+        "content": "Alysse's tenure has also brought a fundamental reframing of what it means to be a county office of education. She has reoriented ACOE's mission around the students who have historically been last in line for resources — and the educators who serve them. Through a countywide vision and set of strategic priorities, she has:\n\n<div class=\"grid md:grid-cols-2 my-4\"> <div class=\"p-4 pb-0\"> <h4 class=\"font-bold text-blue-900 mb-2\">📊 Centered Priority Populations</h4>\n\nEnsuring data, funding, and professional supports are aligned to the students with the highest needs\n</div>\n<div class=\"p-4 pb-0\">\n<h4 class=\"font-bold text-blue-900 mb-2\">🔧 Redesigned Interventions</h4>\n\nProviding differentiated, technically strong, and instructionally grounded support for struggling districts and schools\n</div>\n<div class=\"p-4 pb-0\">\n<h4 class=\"font-bold text-blue-900 mb-2\">💰 Maximized Resources</h4>\n\nUnlocking new funding streams and ensuring districts get timely, accurate, student-centered support\n</div>\n<div class=\"p-4 pb-0\">\n<h4 class=\"font-bold text-blue-900 mb-2\">💡 Culture of Innovation</h4>\n\nEmpowering staff, districts, and community partners to pilot solutions rooted in equity and accountability\n</div>\n</div>\n\nHer \"students-first, systems-always\" approach is known countywide: she is warm and collaborative, but also direct, technically adept, and unafraid to challenge practices that fail students.\n"
+      }
+    },
+    {
+      "discriminant": "textSection",
+      "value": {
+        "heading": "A Leader Rooted in Community and Committed to Justice",
+        "backgroundColor": "white",
+        "maxWidth": "medium",
+        "content": "Alysse's work is shaped by her early years as an educator in schools serving students experiencing homelessness, foster youth, emerging bilinguals, and students navigating trauma and instability. These experiences built her belief that public education is the most powerful tool we have to disrupt the predetermination of failure for children growing up in communities impacted by violence and poverty — and that leaders must be bold enough to change systems that aren't working.\n\nAlysse is a self-professed \"school finance nerd\" who can translate complex fiscal structures into real opportunities for kids, and a trusted statewide expert on Ed Code who uses regulatory expertise not as a barrier, but as a lever for equity. She is honored to be invited by elected officials and labor leaders alike to help build understanding and trust in complex school budgets.\n\n**Alysse continues to lead with clarity, courage, and heart — championing the students who have the least, demanding more of the systems that serve them, and delivering results that prove what is possible when we put the most vulnerable children at the center of every decision.**\n"
+      }
+    },
+    {
+      "discriminant": "cta",
+      "value": {
+        "heading": "Support Alysse's Vision",
+        "description": "Join us in building a more equitable education system for all Alameda County students",
+        "backgroundColor": "gradient",
+        "primaryButtonText": "Get Involved",
+        "primaryButtonLink": "/volunteer",
+        "secondaryButtonText": "View Endorsements",
+        "secondaryButtonLink": "/endorsements"
+      }
+    }
+  ]
+}

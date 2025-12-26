@@ -67,16 +67,84 @@ export default config({
 			},
 		}),
 
-		// general pages like About
+		// general pages with block-based content
 		pages: collection({
 			label: "Pages",
-			slugField: "title",
+			slugField: "name",
 			path: "src/content/pages/*/",
-			format: { contentField: "content", data: "yaml" },
-			entryLayout: "content",
+			format: { data: "json" },
 			schema: {
-				title: fields.slug({ name: { label: "Title" } }),
-				content: fields.markdoc({ label: "Content" }),
+				name: fields.slug({ name: { label: "Page Title" } }),
+				sections: fields.blocks(
+					{
+						hero: {
+							label: "Hero Section",
+							schema: fields.object({
+								title: fields.text({ label: "Title", validation: { isRequired: true } }),
+								subtitle: fields.text({ label: "Subtitle" }),
+								centered: fields.checkbox({ label: "Centered", defaultValue: true }),
+							}),
+						},
+						textSection: {
+							label: "Text Section",
+							schema: fields.object({
+								heading: fields.text({ label: "Heading" }),
+								backgroundColor: fields.select({
+									label: "Background",
+									options: [
+										{ label: "White", value: "white" },
+										{ label: "Gray", value: "gray" },
+									],
+									defaultValue: "white",
+								}),
+								maxWidth: fields.select({
+									label: "Max Width",
+									options: [
+										{ label: "Small", value: "small" },
+										{ label: "Medium", value: "medium" },
+										{ label: "Large", value: "large" },
+									],
+									defaultValue: "medium",
+								}),
+								content: fields.markdoc.inline({
+									label: "Content",
+									description: "Rich text content with Markdoc formatting",
+								}),
+							}),
+						},
+						htmlBlock: {
+							label: "HTML Block",
+							schema: fields.object({
+								html: fields.text({
+									label: "HTML Content",
+									multiline: true,
+									description: "Raw HTML with Tailwind classes",
+								}),
+							}),
+						},
+						cta: {
+							label: "CTA Section",
+							schema: fields.object({
+								heading: fields.text({ label: "Heading", validation: { isRequired: true } }),
+								description: fields.text({ label: "Description" }),
+								backgroundColor: fields.select({
+									label: "Background",
+									options: [
+										{ label: "Gradient", value: "gradient" },
+										{ label: "White", value: "white" },
+										{ label: "Gray", value: "gray" },
+									],
+									defaultValue: "gradient",
+								}),
+								primaryButtonText: fields.text({ label: "Primary Button Text" }),
+								primaryButtonLink: fields.text({ label: "Primary Button Link" }),
+								secondaryButtonText: fields.text({ label: "Secondary Button Text" }),
+								secondaryButtonLink: fields.text({ label: "Secondary Button Link" }),
+							}),
+						},
+					},
+					{ label: "Page Sections" }
+				),
 			},
 		}),
 	},

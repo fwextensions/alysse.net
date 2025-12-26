@@ -23,7 +23,7 @@ const {
 	imageSrc,
 	imageAlt = "",
 	imagePosition = "right",
-	padding = "large",
+	padding = "medium",
 	headerPosition = "top",
 	class: className,
 } = Astro.props;
@@ -38,9 +38,9 @@ const bgClasses = {
 
 const paddingClasses = {
 	none: "py-0",
-	small: "py-8",
-	medium: "py-12",
-	large: "py-16",
+	small: "py-4",
+	medium: "py-8",
+	large: "py-12",
 };
 
 const widthClasses = {
@@ -51,7 +51,7 @@ const widthClasses = {
 ---
 
 <section
-	class={`${paddingClasses[padding]} px-0 md:px-8 ${bgClasses[backgroundColor]} ${className || ""}`}
+	class={`prose ${paddingClasses[padding]} px-0 md:px-8 ${bgClasses[backgroundColor]} ${className || ""}`}
 >
 	<div class={`${widthClasses[maxWidth]} mx-auto`}>
 		{

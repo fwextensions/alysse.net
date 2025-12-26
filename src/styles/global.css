@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 @import "tailwindcss";
 @source "./src/content/**/*.mdoc";
+@source "./src/content/**/*.json";
 
 @theme {
   --color-primary-lime: #cbdb2a;
@@ -31,7 +32,7 @@
     }
 
     ul {
-      @apply my-4;
+      @apply my-4 pl-4;
 
       li {
         @apply my-1;

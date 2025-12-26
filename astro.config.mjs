@@ -27,6 +27,6 @@ export default defineConfig({
   },
 
   integrations: isGitHubPages
-    ? [react(), markdoc()]
-    : [react(), markdoc(), keystatic()],
+    ? [react(), markdoc({ allowHTML: true })]
+    : [react(), markdoc({ allowHTML: true }), keystatic()],
 });

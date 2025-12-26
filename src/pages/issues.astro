@@ -35,7 +35,7 @@ const issuesWithContent = await Promise.all(
 		centered={true}
 	/>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
 		{
 			issuesWithContent.map((issue) => (
 				<TextSection
@@ -45,11 +45,11 @@ const issuesWithContent = await Promise.all(
 					imageSrc={issue.data.image}
 					imageAlt={issue.data.imageAlt}
 					imagePosition="top"
-					padding="medium"
+					padding="small"
 					headerPosition="bottom"
 					class="h-full"
 				>
-					<div class="prose">
+					<div class="prose md:mb-8">
 						<issue.Content />
 					</div>
 				</TextSection>

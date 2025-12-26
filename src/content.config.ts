@@ -64,11 +64,48 @@ export const collections = {
 		}),
 	}),
 
-	// general pages collection (MDX)
+	// general pages collection (block-based JSON)
 	pages: defineCollection({
-		loader: glob({ pattern: "*.md", base: "src/content/pages" }),
+		loader: glob({ pattern: "*/index.json", base: "src/content/pages" }),
 		schema: z.object({
-			title: z.string().optional(),
+			name: z.string(),
+			sections: z.array(z.discriminatedUnion("discriminant", [
+				z.object({
+					discriminant: z.literal("hero"),
+					value: z.object({
+						title: z.string(),
+						subtitle: z.string().optional(),
+						centered: z.boolean().optional(),
+					}),
+				}),
+				z.object({
+					discriminant: z.literal("textSection"),
+					value: z.object({
+						heading: z.string().optional(),
+						backgroundColor: z.enum(["white", "gray"]).optional(),
+						maxWidth: z.enum(["small", "medium", "large"]).optional(),
+						content: z.string().optional(),
+					}),
+				}),
+				z.object({
+					discriminant: z.literal("htmlBlock"),
+					value: z.object({
+						html: z.string(),
+					}),
+				}),
+				z.object({
+					discriminant: z.literal("cta"),
+					value: z.object({
+						heading: z.string(),
+						description: z.string().optional(),
+						backgroundColor: z.enum(["gradient", "white", "gray"]).optional(),
+						primaryButtonText: z.string().optional(),
+						primaryButtonLink: z.string().optional(),
+						secondaryButtonText: z.string().optional(),
+						secondaryButtonLink: z.string().optional(),
+					}),
+				}),
+			])).optional(),
 		}),
 	}),
 };

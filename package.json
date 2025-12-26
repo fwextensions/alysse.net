@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "dev:local": "PUBLIC_KEYSTATIC_STORAGE=local astro dev",
-    "dev:github": "PUBLIC_KEYSTATIC_STORAGE=github astro dev",
+    "dev:local": "cross-env PUBLIC_KEYSTATIC_STORAGE=local astro dev",
+    "dev:github": "cross-env PUBLIC_KEYSTATIC_STORAGE=github astro dev",
     "build": "astro build",
     "build:cf": "astro build",
     "preview": "astro preview",
@@ -29,6 +29,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "wrangler": "^4.54.0"
   }
 }
