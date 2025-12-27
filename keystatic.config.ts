@@ -201,13 +201,23 @@ export default config({
 			path: "src/content/endorsements-page/config",
 			format: { data: "json" },
 			schema: {
-				categoryOrder: fields.array(
+				order2026: fields.array(
 					fields.relationship({
 						label: "Category",
 						collection: "endorsementCategories",
 					}),
 					{
 						label: "Category Order",
+						itemLabel: (props) => props.value || "Select a category",
+					}
+				),
+				order2022: fields.array(
+					fields.relationship({
+						label: "Category",
+						collection: "endorsementCategories",
+					}),
+					{
+						label: "Previous Category Order (2022)",
 						itemLabel: (props) => props.value || "Select a category",
 					}
 				),

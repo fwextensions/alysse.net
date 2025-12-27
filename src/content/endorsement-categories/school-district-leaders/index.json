@@ -1,0 +1,27 @@
+{
+	"name": "School District Leaders",
+	"endorsements": [
+		{ "name": "Ryan LaLonde", "title": "Alameda School Board" },
+		{ "name": "Heather Little", "title": "Alameda School Board" },
+		{ "name": "Ana Vasudeo", "title": "Berkeley School Board" },
+		{ "name": "Jennifer Shanoski", "title": "Berkeley School Board" },
+		{ "name": "Jen Corn", "title": "Berkeley School Board" },
+		{ "name": "Ka’Dijah Brown", "title": "Berkeley School Board" },
+		{ "name": "Mike Chang", "title": "Berkeley School Board" },
+		{ "name": "Sara Raymond", "title": "Castro Valley School Board" },
+		{ "name": "Michael Kusiack", "title": "Castro Valley School Board" },
+		{ "name": "Regina Chagollia", "title": "Emery School Board" },
+		{ "name": "Diane Jones", "title": "Fremont School Board" },
+		{ "name": "Austin Bruckner Carillo", "title": "Hayward School Board" },
+		{ "name": "April Oquenda", "title": "Hayward School Board" },
+		{ "name": "Craig Bueno", "title": "Livermore School Board" },
+		{ "name": "Steven Drouin", "title": "Livermore School Board" },
+		{ "name": "Justin Brown", "title": "Pleasanton School Board" },
+		{ "name": "Kelly Mokashi", "title": "Pleasanton School Board" },
+		{ "name": "Laurie Walker", "title": "Pleasanton School Board" },
+		{ "name": "Erin Choin", "title": "Sunol Glen School Board" },
+		{ "name": "Ted Romo", "title": "Sunol Glen School Board" },
+		{ "name": "Harris Mojadedi", "title": "Chabot-Las Positas Community College Board" },
+		{ "name": "Lance Kwan", "title": "Ohlone Community College Board" }
+	]
+}

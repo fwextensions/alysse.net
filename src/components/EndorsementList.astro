@@ -12,21 +12,16 @@ interface Props {
 }
 
 const { category, endorsements } = Astro.props;
-
-// Filter out any malformed entries
-const validEndorsements = endorsements.filter(
-	(e) => e.name && e.name.trim() && !e.name.includes("Endorsements:"),
-);
 ---
 
 {
-	validEndorsements.length > 0 && (
+	endorsements.length > 0 && (
 		<section class="mb-12">
 			<h2 class="text-3xl font-bold text-primary-blue mb-6 border-b-4 border-primary-lime inline-block pb-2">
 				{category}
 			</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 mt-6">
-				{validEndorsements.map((endorsement) => (
+				{endorsements.map((endorsement) => (
 					<EndorsementCard name={endorsement.name} title={endorsement.title} />
 				))}
 			</div>

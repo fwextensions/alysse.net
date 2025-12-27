@@ -9,13 +9,22 @@ import { getCollection, getEntry } from "astro:content";
 
 // fetch page config with category order
 const pageConfig = await getEntry("endorsementsPage", "config");
-const categoryOrder = pageConfig?.data?.categoryOrder || [];
+const order2026 = pageConfig?.data?.order2026 || [];
+const order2022 = pageConfig?.data?.order2022 || [];
 
 // fetch all endorsement categories
 const allCategories = await getCollection("endorsementCategories");
 
 // build endorsements data in the specified order
-const endorsementsData = categoryOrder
+const endorsements2026 = order2026
+	.map((categoryID) => allCategories.find((cat) => cat.id === categoryID))
+	.filter((cat) => cat !== undefined)
+	.map((cat) => ({
+		category: cat.data.name,
+		endorsements: cat.data.endorsements || [],
+	}));
+
+const endorsements2022 = order2022
 	.map((categoryID) => allCategories.find((cat) => cat.id === categoryID))
 	.filter((cat) => cat !== undefined)
 	.map((cat) => ({
@@ -39,7 +48,7 @@ const galleryData = galleryEntries[0]?.data?.endorsements || [];
 	<section class="py-16 px-4 bg-white">
 		<div class="max-w-7xl mx-auto space-y-16">
 			{
-				endorsementsData.map((group) => (
+				endorsements2026.map((group) => (
 					<EndorsementList
 						category={group.category}
 						endorsements={group.endorsements}
@@ -47,8 +56,24 @@ const galleryData = galleryEntries[0]?.data?.endorsements || [];
 				))
 			}
 
+			{
+				endorsements2022.length > 0 && (
+					<div class="pt-16">
+						<h2 class="text-4xl font-bold text-center mb-12">
+							2022 Endorsements
+						</h2>
+						{endorsements2022.map((group) => (
+							<EndorsementList
+								category={group.category}
+								endorsements={group.endorsements}
+							/>
+						))}
+					</div>
+				)
+			}
+
 			<div class="pt-16">
-				<h2 class="text-3xl mb-16 text-center">
+				<h2 class="text-4xl font-bold mb-16 text-center">
 					Alysse is supported by educators and community leaders
 				</h2>
 				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

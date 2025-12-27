@@ -1,6 +1,7 @@
 {
 	"name": "Education",
 	"endorsements": [
-		{ "name": "California School Employees Association and California Teachers Association", "title": "" }
+		{ "name": "California School Employees Association", "title": "" },
+		{ "name": "California Teachers Association", "title": "" }
 	]
 }

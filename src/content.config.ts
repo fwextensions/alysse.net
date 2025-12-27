@@ -18,7 +18,8 @@ export const collections = {
 	endorsementsPage: defineCollection({
 		loader: glob({ pattern: "config.json", base: "src/content/endorsements-page" }),
 		schema: z.object({
-			categoryOrder: z.array(z.string()),
+			order2026: z.array(z.string()),
+			order2022: z.array(z.string()).optional(),
 		}),
 	}),
 

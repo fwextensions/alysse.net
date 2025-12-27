@@ -1,0 +1,15 @@
+{
+	"name": "City Leaders",
+	"endorsements": [
+		{ "name": "Michelle Pryor", "title": "Alameda City Council" },
+		{ "name": "Courtney Welch", "title": "Emeryville City Council" },
+		{ "name": "George Syrop", "title": "Hayward City Council" },
+		{ "name": "Evan Branning", "title": "Livermore City Council" },
+		{ "name": "Kristie Wang", "title": "Livermore City Council" },
+		{ "name": "Kevin Jenkins", "title": "Oakland City Council" },
+		{ "name": "Rowena Brown", "title": "Oakland City Council" },
+		{ "name": "Janani Ramachandran", "title": "Oakland City Council" },
+		{ "name": "Zach Unger", "title": "Oakland City Council" },
+		{ "name": "Elihu Harris", "title": "Oakland Mayor, Assembly Member (retired)" }
+	]
+}

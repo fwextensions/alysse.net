@@ -1,13 +1,15 @@
 {
-	"categoryOrder": [
+	"order2026": [
 		"alameda-county-leaders",
-		"city-state-leaders",
-		"education-leaders",
+		"state-leaders",
+		"city-leaders",
+		"school-district-leaders",
+		"labor-leaders"
+	],
+	"order2022": [
 		"education",
 		"teachers-associations",
-		"former-acoe-leaders",
 		"political-organizations",
-		"elected-officials",
 		"labor"
 	]
 }

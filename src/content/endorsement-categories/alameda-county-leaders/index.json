@@ -1,12 +1,18 @@
 {
 	"name": "Alameda County Leaders",
 	"endorsements": [
+		{ "name": "David Haubert", "title": "Alameda County Supervisor" },
+		{ "name": "Lena Tam", "title": "Alameda County Supervisor" },
 		{ "name": "Elisa Marquez", "title": "Alameda County Supervisor" },
 		{ "name": "Nikki Fortunato Bas", "title": "Alameda County Supervisor" },
 		{ "name": "Nate Miley", "title": "Alameda County Supervisor" },
-		{ "name": "David Haubert", "title": "Alameda County Supervisor" },
 		{ "name": "Yesenia Sanchez", "title": "Alameda County Sheriff" },
 		{ "name": "Phong La", "title": "Alameda County Assessor" },
-		{ "name": "Melissa Wilk", "title": "Alameda County Auditor" }
+		{ "name": "Melissa Wilk", "title": "Alameda County Auditor" },
+		{ "name": "Aisha Knowles", "title": "Alameda County Board of Education" },
+		{ "name": "Angela Normand", "title": "Alameda County Board of Education" },
+		{ "name": "Cheryl Cook-Kallio", "title": "Alameda County Board of Education" },
+		{ "name": "Janevette Cole", "title": "Alameda County Board of Education" },
+		{ "name": "Ken Berrick", "title": "Alameda County Board of Education" }
 	]
 }
