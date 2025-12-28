@@ -1,0 +1,62 @@
+---
+import HeroSection from "./HeroSection.astro";
+import TextSection from "./TextSection.astro";
+import CTASection from "./CTASection.astro";
+import { renderMarkdoc } from "../utils/markdoc";
+
+interface Props {
+	sections?: Array<{
+		discriminant: string;
+		value: any;
+	}>;
+}
+
+const { sections = [] } = Astro.props;
+---
+
+{
+	sections?.map((section) => {
+		if (section.discriminant === "hero") {
+			return (
+				<HeroSection
+					title={section.value.title}
+					subtitle={section.value.subtitle}
+					centered={section.value.centered}
+				/>
+			);
+		}
+
+		if (section.discriminant === "textSection") {
+			const htmlContent = section.value.content ? renderMarkdoc(section.value.content) : "";
+			return (
+				<TextSection
+					heading={section.value.heading}
+					backgroundColor={section.value.backgroundColor}
+					maxWidth={section.value.maxWidth === "small" ? "narrow" : section.value.maxWidth === "large" ? "wide" : "medium"}
+				>
+					<Fragment set:html={htmlContent} />
+				</TextSection>
+			);
+		}
+
+		if (section.discriminant === "htmlBlock") {
+			return <Fragment set:html={section.value.html} />;
+		}
+
+		if (section.discriminant === "cta") {
+			return (
+				<CTASection
+					heading={section.value.heading}
+					description={section.value.description}
+					backgroundColor={section.value.backgroundColor}
+					primaryButtonText={section.value.primaryButtonText}
+					primaryButtonLink={section.value.primaryButtonLink}
+					secondaryButtonText={section.value.secondaryButtonText}
+					secondaryButtonLink={section.value.secondaryButtonLink}
+				/>
+			);
+		}
+
+		return null;
+	})
+}

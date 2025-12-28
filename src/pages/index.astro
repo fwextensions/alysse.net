@@ -1,11 +1,9 @@
 ---
 import { getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import TextSection from "../components/TextSection.astro";
-import CTASection from "../components/CTASection.astro";
 import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import CMSSections from "../components/CMSSections.astro";
 import heroImage from "../assets/img/green-coat-2-kids.jpg";
-import { renderMarkdoc } from "../utils/markdoc";
 
 const page = await getEntry("pages", "home");
 const { sections } = page?.data || { sections: [] };
@@ -31,38 +29,5 @@ const { sections } = page?.data || { sections: [] };
 		</div>
 	</section>
 
-	{
-		sections?.map((section) => {
-			if (section.discriminant === "textSection") {
-				const htmlContent = section.value.content ? renderMarkdoc(section.value.content) : "";
-				return (
-					<TextSection
-						heading={section.value.heading}
-						backgroundColor={section.value.backgroundColor}
-						maxWidth={section.value.maxWidth === "small" ? "narrow" : section.value.maxWidth === "large" ? "wide" : "medium"}
-					>
-						<Fragment set:html={htmlContent} />
-					</TextSection>
-				);
-			}
-
-			if (section.discriminant === "htmlBlock") {
-				return <Fragment set:html={section.value.html} />;
-			}
-
-			if (section.discriminant === "cta") {
-				return (
-					<CTASection
-						heading={section.value.heading}
-						description={section.value.description}
-						backgroundColor={section.value.backgroundColor}
-						primaryButtonText={section.value.primaryButtonText}
-						primaryButtonLink={section.value.primaryButtonLink}
-						secondaryButtonText={section.value.secondaryButtonText}
-						secondaryButtonLink={section.value.secondaryButtonLink}
-					/>
-				);
-			}
-		})
-	}
+	<CMSSections sections={sections} />
 </Layout>
