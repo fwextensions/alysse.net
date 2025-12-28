@@ -90,7 +90,7 @@ const widthClasses = {
 					class={`grid md:grid-cols-2 gap-8 items-center ${imagePosition === "left" ? "md:grid-flow-dense" : ""}`}
 				>
 					<div
-						class={`text-lg max-w-none text-text-body leading-relaxed ${imagePosition === "left" ? "md:col-start-2" : ""}`}
+						class={`prose text-lg max-w-none text-text-body leading-relaxed ${imagePosition === "left" ? "md:col-start-2" : ""}`}
 					>
 						<slot>
 							{content && <p>{content}</p>}
@@ -109,7 +109,7 @@ const widthClasses = {
 					</div>
 				</div>
 			) : (
-				<div class="max-w-none text-lg text-text-body leading-relaxed">
+				<div class="prose max-w-none text-lg text-text-body leading-relaxed">
 					<slot>
 						{content && <p>{content}</p>}
 					</slot>

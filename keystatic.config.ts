@@ -94,6 +94,9 @@ export default config({
 									options: [
 										{ label: "White", value: "white" },
 										{ label: "Gray", value: "gray" },
+										{ label: "Lime", value: "lime" },
+										{ label: "Blue", value: "blue" },
+										{ label: "Dark Blue", value: "dark-blue" },
 									],
 									defaultValue: "white",
 								}),

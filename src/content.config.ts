@@ -83,7 +83,7 @@ export const collections = {
 					discriminant: z.literal("textSection"),
 					value: z.object({
 						heading: z.string().optional(),
-						backgroundColor: z.enum(["white", "gray"]).optional(),
+						backgroundColor: z.enum(["white", "gray", "lime", "blue", "dark-blue"]).optional(),
 						maxWidth: z.enum(["small", "medium", "large"]).optional(),
 						content: z.string().optional(),
 					}),
